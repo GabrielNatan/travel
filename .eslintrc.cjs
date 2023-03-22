@@ -19,6 +19,7 @@ module.exports = {
         'react',
         '@typescript-eslint'
     ],
+    'indent': ['error', 2],
     'rules': {
         'indent': [
             'error',
