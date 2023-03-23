@@ -11,7 +11,12 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' Component={ChangePassword}/>
+                <Route path='/add-paymant' Component={AddPayment}/>
+                <Route path='/forgot-password' Component={Forgot}/>
+                <Route path='/login' Component={Login}/>
+                <Route path='/sign-up' Component={SignUp}/>
+                <Route path='/verify-code' Component={VerifyCode}/>
+                <Route path='/change-password' Component={ChangePassword}/>
                 <Route path='/' Component={Home}/>
             </Routes>
         </BrowserRouter>
