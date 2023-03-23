@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { AddPayment } from './pages/AddPayment';
 import { Forgot } from './pages/Forgot';
 import { Home } from './pages/Home';
 import { Login } from './pages/Login';
@@ -8,7 +9,7 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' Component={Forgot}/>
+                <Route path='/' Component={AddPayment}/>
                 <Route path='/' Component={Home}/>
             </Routes>
         </BrowserRouter>
