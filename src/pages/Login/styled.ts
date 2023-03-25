@@ -32,6 +32,22 @@ export const Right = styled(Grid)`
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    h1{
+      font-size: 60px;
+      line-height: 30px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    a{
+      text-align: right;
+      color: #0099FF;
+      text-decoration: none;
+      cursor: pointer;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      &:last-child{
+        text-align: center;
+      }
+    }
   }
 `
 export const ContainerImage = styled.div`
