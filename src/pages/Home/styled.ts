@@ -15,6 +15,7 @@ export const Header = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 `
 export const ContainerText = styled.div`
   display: flex;
@@ -56,6 +57,16 @@ export const ContainerText = styled.div`
     }
   }
 
+`
+
+export const ContainerCardTravel = styled.div`
+  position: absolute;
+  bottom: calc(-237px / 2);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 `
 
 export const Main = styled.main`

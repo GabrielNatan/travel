@@ -1,4 +1,5 @@
 import { AppBar, Button, Toolbar, Typography } from "@mui/material"
+import { Link } from "react-router-dom"
 import {
   Container,
   Topbar
@@ -6,13 +7,13 @@ import {
 export const Navbar = ()=>{
   return (
     <Container  >
-      <AppBar >
+      <AppBar  sx={{background: 'transparent'}}>
          <Topbar>
            <div style={{color:"#000"}}>Logo</div>
 
           <nav>
-            <a><Button variant="outlined">Sign in</Button></a>
-            <a><Button variant="contained">Sign up</Button></a>
+            <Link to="/login"><Button variant="outlined">Login</Button></Link>
+            <Link to="/sign-up"><Button variant="contained">Sign up</Button></Link>
           </nav>
         </Topbar>
       </AppBar>
