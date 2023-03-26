@@ -6,18 +6,21 @@ import { Home } from './pages/Home';
 import { Login } from './pages/Login';
 import { SignUp } from './pages/SignUp';
 import { VerifyCode } from './pages/VerifyCode'
+import { AuthTemplate } from './templates/AuthTemplate';
 function App() {
 
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' Component={Home}/>
+              <Route Component={AuthTemplate}>
                 <Route path='/add-paymant' Component={AddPayment}/>
                 <Route path='/forgot-password' Component={Forgot}/>
                 <Route path='/login' Component={Login}/>
                 <Route path='/sign-up' Component={SignUp}/>
                 <Route path='/verify-code' Component={VerifyCode}/>
                 <Route path='/change-password' Component={ChangePassword}/>
+              </Route>
+              <Route path='/' Component={Home}/>
             </Routes>
         </BrowserRouter>
     );
