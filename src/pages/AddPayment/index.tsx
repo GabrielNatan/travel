@@ -1,8 +1,8 @@
 import { Button, TextField } from "@mui/material";
-import { GroupInput } from "./styled";
+import { Form, GroupInput } from "./styled";
 export const AddPayment = () => {
   return (
-    <form>
+    <Form>
       <h1>Add Payment Card</h1>
       <strong>Um texto de exemplo</strong>
       <TextField fullWidth label="Card Number" variant="outlined" />
@@ -16,6 +16,6 @@ export const AddPayment = () => {
         Contained
       </Button>
       <span>Already have an account? Login</span>
-    </form>
+    </Form>
   );
 };

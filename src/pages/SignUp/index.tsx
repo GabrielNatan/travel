@@ -1,8 +1,9 @@
 import { Button, TextField } from "@mui/material";
-import { GroupInput } from "./styled";
+import { Link } from "react-router-dom";
+import { Form, GroupInput } from "./styled";
 export const SignUp = () => {
   return (
-    <form>
+    <Form>
       <h1>Sign Up</h1>
       <strong>Um texto de exemplo</strong>
       <GroupInput>
@@ -18,7 +19,7 @@ export const SignUp = () => {
       <Button fullWidth variant="outlined">
         Outlined
       </Button>
-      <span>Already have an account? Login</span>
-    </form>
+      <Link to="/login">Already have an account? Login</Link>
+    </Form>
   );
 };

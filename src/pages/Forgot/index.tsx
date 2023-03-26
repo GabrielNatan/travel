@@ -1,13 +1,14 @@
 import { Button, TextField } from "@mui/material"
+import { Link } from "react-router-dom"
+import { Form } from "./styled"
 export const Forgot = ()=>{
     return(
-      <form>
+      <Form>
         <h1>Forgot Password</h1>
         <strong>Um texto de exemplo</strong>
         <TextField fullWidth label="Email" variant="outlined" />
-        <TextField fullWidth label="Confirm Password" variant="outlined" />
         <Button fullWidth variant="contained">Contained</Button>
-        <span>Already have an account? Login</span>
-      </form>
+        <Link to="/login">Already have an account? Login</Link>
+      </Form>
     )
 }

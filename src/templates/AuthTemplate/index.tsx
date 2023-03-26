@@ -8,16 +8,17 @@ import {
 } from "./styled"
 
 export const AuthTemplate = ()=>{
+  const order = 'left'
   return(
     <Container>
     <Grid
       container
       height="100%"
     >
-      <Left>
+      <Left order={order}>
         <ContainerImage/>
       </Left>
-      <Right>
+      <Right order={order}>
         <Outlet/>
       </Right>
     </Grid>

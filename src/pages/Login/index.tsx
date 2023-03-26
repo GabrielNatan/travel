@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { Link } from "react-router-dom";
-
+import { Form } from "./styled"
 type Inputs = {
   email: string,
   password: string,
@@ -24,7 +24,7 @@ export const Login = ()=>{
 
   console.log(errors)
   return(
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)}>
       <h1>Login</h1>
       <p>Um texto de exemplo</p>
       <TextField
@@ -54,6 +54,6 @@ export const Login = ()=>{
         Login
       </Button>
       <Link to="/sign-up">create accont</Link>
-    </form>
+    </Form>
   )
 }
