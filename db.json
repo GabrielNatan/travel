@@ -1,0 +1,6 @@
+{
+  "customers":[
+      {"name":"Jarvas","password":"1234", "email":"jarvas@email.com"}
+  ]
+}
+
