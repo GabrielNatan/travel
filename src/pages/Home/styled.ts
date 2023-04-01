@@ -16,6 +16,7 @@ export const Header = styled.header`
   align-items: center;
   justify-content: center;
   position: relative;
+  margin-bottom:150px;
 `
 export const ContainerText = styled.div`
   display: flex;
@@ -70,5 +71,9 @@ export const ContainerCardTravel = styled.div`
 `
 
 export const Main = styled.main`
-
+  display: flex;
+  flex-direction:column;
+`
+export const Section = styled.section`
+  padding: 60px;
 `
