@@ -7,9 +7,13 @@ import { Login } from './pages/Login';
 import { SignUp } from './pages/SignUp';
 import { VerifyCode } from './pages/VerifyCode'
 import { AuthTemplate } from './templates/AuthTemplate';
+import { SnackBarProvider } from './context/SnackBarContext';
+import { SnackBarComponent } from './components/SnackBar';
 function App() {
 
     return (
+      <SnackBarProvider>
+        <SnackBarComponent/>
         <BrowserRouter>
             <Routes>
               <Route Component={AuthTemplate}>
@@ -23,6 +27,7 @@ function App() {
               <Route path='/' Component={Home}/>
             </Routes>
         </BrowserRouter>
+      </SnackBarProvider>
     );
 }
 
