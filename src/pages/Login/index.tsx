@@ -5,7 +5,7 @@ import * as yup from "yup";
 import { Link } from "react-router-dom";
 import { Form } from "./styled"
 import Customers from "../../api/Customers";
-import { useState } from "react";
+import { useSnackBar } from "../../context/SnackBarContext";
 
 type Inputs = {
   email: string,
@@ -20,17 +20,16 @@ const schema = yup.object({
 }).required();
 
 export const Login = ()=>{
-  const [message, setMessage] = useState('')
+  const {message, handleOpen } = useSnackBar()
   const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>({
     resolver: yupResolver(schema)
   });
   const onSubmit: SubmitHandler<Inputs> = async data => {
     const { email, password } = data;
     let res = await Customers.getUser(email);
-    if(typeof res === "string"){
-      setMessage(res)
+    if(typeof res === "string" && handleOpen !== undefined){
+      handleOpen("Esse usuario não existe")
     }
-
   };
 
   console.log(errors)
@@ -38,7 +37,6 @@ export const Login = ()=>{
     <Form onSubmit={handleSubmit(onSubmit)}>
       <h1>Login</h1>
       <p>Um texto de exemplo</p>
-      {message && <p style={{color:"red"}}>{message}</p>}
       <TextField
         fullWidth
         type="email"
