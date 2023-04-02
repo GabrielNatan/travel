@@ -1,6 +1,32 @@
 {
   "customers":[
       {"name":"Jarvas","password":"1234", "email":"jarvas@email.com"}
+  ],
+  "popular":[
+    {
+      "title":"Rio de Janeiro",
+      "image":"https://a.cdn-hotels.com/gdcs/production9/d1564/3ccba6f6-0062-446e-8790-0a6b261b2f41.jpg"
+    },
+    {
+      "title":"Porto seguro",
+      "image":"https://entremares.tur.br/wp-content/uploads/2019/11/operacao-porto-seguro-jericoaocoara-1.jpg"
+    },
+    {
+      "title":"Maceió",
+      "image":"https://viagemeturismo.abril.com.br/wp-content/uploads/2016/10/01241975-4f8a5b1f0f.jpeg?quality=70&strip=info&w=920&w=636"
+    },
+    {
+      "title":"Natal",
+      "image":"https://natalpraias.com.br/wp-content/uploads/2020/08/maracajau-natal-rn-natalpraias-1200x1200-1.jpg"
+    },
+    {
+      "title":"Gramado",
+      "image":"https://lirp.cdn-website.com/bd215e00/dms3rep/multi/opt/Banner+Wyndham+Gramado+Termas+Resort+Spa-640w.png"
+    },
+    {
+      "title":"Porto de Galinhas",
+      "image":"https://todepassagem.clickbus.com.br/wp-content/uploads/2022/11/porto-de-galinhas-to-de-passagem.jpg"
+    }
   ]
 }
 

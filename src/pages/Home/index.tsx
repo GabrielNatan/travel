@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Typography } from "@mui/material"
+import { Grid, Typography } from "@mui/material"
 import { CardTravel } from "../../components/CardTravel"
 import { Navbar } from "../../components/Navbar"
 import MaxContent from '@mui/material/Container';
@@ -11,8 +11,24 @@ import {
   Section
 } from "./styled"
 import { Card } from "../../components/Card"
+import { useEffect, useState } from "react";
+import { app } from "../../api";
+
+interface IData{
+  title: string
+  image: string
+}
 
 export const Home = ()=>{
+  const [popular, setPopular] = useState<IData[]>([])
+  useEffect(()=>{
+    app.get('/popular')
+    .then(el=>{
+      const { data } = el
+      setPopular(data)
+    })
+  },[])
+
     return(
         <Container>
           <Header>
@@ -34,47 +50,16 @@ export const Home = ()=>{
                 </Typography>
 
                 <Grid container  spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                  <Grid item xs={4}>
-                    <Card
-                      title="Horseshoe Bay"
-                      image="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
-                    />
-                  </Grid>
-
-                  <Grid item xs={4}>
-                    <Card
-                      title="Horseshoe Bay"
-                      image="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
-                    />
-                  </Grid>
-
-                  <Grid item xs={4}>
-                    <Card
-                      title="Horseshoe Bay"
-                      image="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
-                    />
-                  </Grid>
-
-                  <Grid item xs={4}>
-                    <Card
-                      title="Horseshoe Bay"
-                      image="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
-                    />
-                  </Grid>
-
-                  <Grid item xs={4}>
-                    <Card
-                      title="Horseshoe Bay"
-                      image="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
-                    />
-                  </Grid>
-
-                  <Grid item xs={4}>
-                    <Card
-                      title="Horseshoe Bay"
-                      image="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1473&q=80"
-                    />
-                  </Grid>
+                  {popular.map(el=>{
+                    return(
+                      <Grid item xs={4}>
+                        <Card
+                          title={el.title}
+                          image={el.image}
+                        />
+                      </Grid>
+                    )
+                  })}
                 </Grid>
               </MaxContent>
             </Section>

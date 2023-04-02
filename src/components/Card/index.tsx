@@ -1,4 +1,4 @@
-import { Paper, Typography } from "@mui/material"
+import { Typography } from "@mui/material"
 import { Container } from './styled'
 interface CardProps{
   title: string
