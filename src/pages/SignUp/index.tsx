@@ -8,10 +8,13 @@ import Customers from "../../api/Customers";
 import { useSnackBar } from "../../context/SnackBarContext";
 
 const schema = yup.object({
+  name: yup.string().required(),
+  lastName: yup.string().required(),
   email: yup.string()
   .email("required")
   .required(),
   password: yup.string().min(6).required(),
+  confirmPassword: yup.string().oneOf([yup.ref('password')], 'Passwords must match')
 }).required();
 
 interface Inputs{
@@ -29,12 +32,7 @@ export const SignUp = () => {
   });
 
   const onSubmit: SubmitHandler<Inputs> = async data => {
-    const { name, lastName, email, password, confirmPassword } = data;
-    console.log("NAME : ", name)
-    console.log("LAST NAME : ", lastName)
-    console.log("EMAIL : ", email)
-    console.log("PASSWORD : ", password)
-    console.log("confirmPassword : ", confirmPassword)
+    const { name, lastName, email, password } = data;
     let res = await Customers.createUser(name,lastName,email,password);
     if(handleOpen !== undefined){
       handleOpen(res)
