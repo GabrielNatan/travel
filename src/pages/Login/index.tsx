@@ -26,9 +26,10 @@ export const Login = ()=>{
   });
   const onSubmit: SubmitHandler<Inputs> = async data => {
     const { email, password } = data;
-    let res = await Customers.getUser(email);
-    if(typeof res === "string" && handleOpen !== undefined){
-      handleOpen("Esse usuario não existe")
+    let res = await Customers.login(email,password);
+
+    if(handleOpen !== undefined){
+      handleOpen(res.message)
     }
   };
 

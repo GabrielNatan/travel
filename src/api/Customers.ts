@@ -28,6 +28,20 @@ class Customer{
     }
   }
 
+  async login(email: string, password: string){
+    try {
+      const { data } = await app(this.url)
+      const [ user ] = data.filter((customer:ICustomer) =>{ return customer.email === email})
+      if(!user || user.password !== password){
+        throw("error")
+      }
+      return {message:"login realizado com sucesso",user}
+
+    } catch (error) {
+      return {message:"Usuario não encontrado.", user:{}}
+    }
+  }
+
   async createUser(name: string, lastName: string, email: string, password:string){
     try{
       await app.post(this.url,{id:uuidv4(),name,lastName,email,password})

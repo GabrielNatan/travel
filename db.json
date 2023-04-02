@@ -11,8 +11,15 @@
       "id": "52c7611c-c40f-41c7-8393-0ef89a7b6837",
       "name": "name",
       "lastName": "maneiro",
-      "email": "legal@legal.com",
+      "email": "legal2@legal.com",
       "password": "123456789"
+    },
+    {
+      "id": "a3db849b-e764-4bc6-9356-0c47d7f6810c",
+      "name": "Yalagel",
+      "lastName": "Natan",
+      "email": "development@grouplinknetwork.com",
+      "password": "789456789456"
     }
   ],
   "popular": [
