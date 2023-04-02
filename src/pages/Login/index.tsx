@@ -20,8 +20,8 @@ const schema = yup.object({
 }).required();
 
 export const Login = ()=>{
-  const {message, handleOpen } = useSnackBar()
-  const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>({
+  const { handleOpen } = useSnackBar()
+  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
     resolver: yupResolver(schema)
   });
   const onSubmit: SubmitHandler<Inputs> = async data => {
@@ -32,7 +32,6 @@ export const Login = ()=>{
     }
   };
 
-  console.log(errors)
   return(
     <Form onSubmit={handleSubmit(onSubmit)}>
       <h1>Login</h1>
@@ -43,7 +42,7 @@ export const Login = ()=>{
         label="Email"
         variant="outlined"
         {...register("email")}
-        error={!!errors?.email?.message || !!message}
+        error={!!errors?.email?.message }
         helperText={errors?.email?.message}
       />
       <TextField
@@ -52,7 +51,7 @@ export const Login = ()=>{
         label="Password"
         variant="outlined"
         {...register("password")}
-        error={!!errors?.password?.message || !!message}
+        error={!!errors?.password?.message}
         helperText={errors?.password?.message}
       />
       <Link to="/forgot-password">Forgot password</Link>
